@@ -9,6 +9,8 @@ class UserProfile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     age = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=True)
+    password_hash = db.Column(db.String(128), nullable=True)
     height = db.Column(db.Float, nullable=True)  # in cm
     weight = db.Column(db.Float, nullable=True)  # in kg
     allergies = db.Column(
